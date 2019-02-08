@@ -15,6 +15,10 @@ app.use(bodyParser.json());
 app.get('/api/books', ctrl.getBooks);
 
 
+
+app.get(`/api/searchBookByTitle`, ctrl.searchBookByTitle)
+
+
 //Post - Create
 app.post('/api/book', ctrl.createBook);
 
@@ -25,6 +29,8 @@ app.delete('/api/book/:id', ctrl.deleteBook)
 
 //Put
 app.put('/api/book/:id', ctrl.updateBook)
+
+
 
 
 const PORT = 4000;

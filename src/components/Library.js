@@ -14,7 +14,8 @@ class Library extends Component {
             summary: ``,
             notes: ``,
             id: 0,
-            editing: false
+            editing: false,
+            userSearch: ''
         }
         this.deleteBook = this.deleteBook.bind(this);
         this.updateBook = this.updateBook.bind(this);
@@ -57,6 +58,12 @@ class Library extends Component {
     handleNotes(value) {
         this.setState({
             notes: value
+        })
+    }
+
+    handleSearch(value) {
+        this.setState({
+            userSearch: value
         })
     }
 
@@ -111,9 +118,24 @@ class Library extends Component {
         })
     }
 
+    searchByTitle(){
+        axios.get(`/api/searchBookByTitle?title=${this.state.userSearch}`).then( (req) => {
+            if (req.data.length < 1) {
+                alert('no books found')
+            } else {
+            this.setState({
+                books: req.data
+            })}
+        })
+        this.setState({
+            userSearch: ''
+        })
+    }
+
+
 
     render() { 
-        const {title, author, bookImgUrl, summary, notes} = this.state
+        const {title, author, bookImgUrl, summary, notes, userSearch} = this.state
         let mappedBooks = this.state.books.map( (book, index) => {
             return (
                 <div key={index}>
@@ -140,9 +162,13 @@ class Library extends Component {
                 </div>
                 <div>
                     <button onClick={() => this.createBook(title, author, bookImgUrl, summary, notes)}>Add New Book</button>
-                </div>
 
+                    <input onChange={(e) => this.handleSearch(e.target.value)} value={this.state.userSearch}/>
+                    <button onClick={() => this.searchByTitle(this.state.userSearch)}> Search by Title</button>
+                </div>
+                <div>
                 
+                </div>
                 {mappedBooks}
             </div>
 

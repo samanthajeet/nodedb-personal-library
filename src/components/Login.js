@@ -1,11 +1,16 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 
-class Login extends Component {
+
+class Header extends Component {
+    state = {  }
     render() { 
-        return ( 
+        return (
+        <div>
             <button onClick={ () => this.props.loginFn()}>Login</button>
+        </div>
+
          );
     }
 }
  
-export default Login;
+export default Header;

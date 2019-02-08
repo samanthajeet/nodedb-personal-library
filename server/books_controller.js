@@ -33,6 +33,11 @@ module.exports = {
         res.status(200).send(books);
     },
 
+    searchBookByTitle: (req, res) => {
+        let filtered = books.filter( (book) => book.title.toLowerCase() == req.query.title.toLowerCase());
+        res.status(200).send(filtered)
+    },
+
     createBook: (req, res) => {
         const {title, author, bookImgUrl, summary, notes} = req.body;
         let id = books.length;

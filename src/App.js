@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Library from './components/Library'
-import Header from './components/Header'
+import Login from './components/Login'
+import Greeting from './components/Greeting'
 
 
 
@@ -10,7 +11,8 @@ class App extends Component {
     super();
 
     this.state = {
-      authenticated: false
+      authenticated: false,
+      user: 'Sam'
     }
 
     this.login = this.login.bind(this)
@@ -27,7 +29,8 @@ class App extends Component {
   render() {
     return (
       <div >
-        <Header loginFn={this.login}/>
+        <Greeting name={this.state.user} />
+        <Login loginFn={this.login}/>
         {this.state.authenticated && <Library />}
       </div>
     );
