@@ -167,6 +167,7 @@ class Library extends Component {
                     <button onClick={() => this.searchByTitle(this.state.userSearch)}> Search by Title</button>
                 </div>
                 <div>
+                    <button onClick={() => this.componentDidMount()}>Reset Search Results</button>
                 
                 </div>
                 {mappedBooks}
