@@ -154,7 +154,7 @@ class Library extends Component {
         return (
             <div>
                 <div className="library">
-                    <Greeting name={this.props.user} />
+                    <Greeting className="greeting" name={this.props.user} />
                     <div className="create-search-bar">
                         <div className="create-edit-input">
                             <input type="text" placeholder="Book Title" onChange={ (e) => this.handleTitle(e.target.value)} value={title}/>
@@ -165,7 +165,7 @@ class Library extends Component {
                             <button onClick={() => this.createBook(title, author, bookImgUrl, summary, notes)}>Add New Book</button>
                         </div>
                         <div className="search-by-title">
-                            <input onChange={(e) => this.handleSearch(e.target.value)} value={this.state.userSearch}/>
+                            <input placeholder="Book Title to Search" onChange={(e) => this.handleSearch(e.target.value)} value={this.state.userSearch}/>
                             <button onClick={() => this.searchByTitle(this.state.userSearch)}> Searchby Title</button>
                             <button onClick={() => this.componentDidMount()}>Reset Search Results</button>
                         </div>

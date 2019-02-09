@@ -4,6 +4,12 @@ body {
 
 }
 
+.greeting{
+  display: flex;
+  justify-content: center;
+  
+}
+
 .landing-login{
   display: flex;
   flex-direction: column;

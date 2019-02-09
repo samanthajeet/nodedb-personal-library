@@ -8,8 +8,28 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.create-edit-input {
+    margin-bottom: 5px;
+}
+
+.create-edit-input > input {
+    width: 200px;
+    height: 20px;
+    margin-bottom: 15px;
+    border: 1px solid black;
+    padding-left: 3px;
 
 }
+
+.search-by-title >input{
+    width: 200px;
+    height: 20px;
+    border: 1px solid black;
+    padding-left: 3px;
+}
+
 
 .book-display {
     width: 100vw;
