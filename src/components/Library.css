@@ -1,3 +1,20 @@
-.library {
-    align-items: center
+
+.create-search-bar {
+    height: 100px;
+    width: 100vw;
+    background: blue;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.book-display {
+    width: 100vw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 150px
 }

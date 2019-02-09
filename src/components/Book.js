@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import './Book.css'
 
 
 
@@ -35,24 +36,26 @@ class Book extends Component {
     render() {
         const {book, deleteBookFn} = this.props
         return(
-            <div>
-
-                <h3>{book.title}</h3>
-                <img src={book.bookImgUrl} alt={book.title} />
-                <h5>{book.author}</h5>
-                <p>{book.summary}</p>
-
-
-                {this.state.editing ? (
-                    <button onClick={ () => this.updateBook(book.id)}>Save Changes</button>
-                ) : (
-                    <button onClick={ () => this.edit()}>Update</button>
-                )}
-
-
-                <button onClick={ () => {deleteBookFn(book.id)}}>Delete</button>
-
-
+            <div className="book-card">
+                <figure className="book-image">
+                    <img src={book.bookImgUrl} alt={book.title} />
+                </figure>
+                <div className="book-text-buttons">
+                    <div className="book-text">
+                        <h2>{book.title}</h2>
+                        <h4>{book.author}</h4>
+                        <p>{book.summary}</p>
+                        <p>Notes: {book.notes}</p>
+                    </div>
+                    <div className="book-buttons">
+                        {this.state.editing ? (
+                            <button onClick={ () => this.updateBook(book.id)}>Save Changes</button>
+                        ) : (
+                            <button onClick={ () => this.edit()}>Update</button>
+                        )}
+                        <button onClick={ () => {deleteBookFn(book.id)}}>Delete</button>
+                    </div>
+                </div>
             </div>
         );
     }

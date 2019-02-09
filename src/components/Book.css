@@ -1,0 +1,64 @@
+
+
+.book-card{
+    height: 300px;
+    width: 600px;
+    background: white;
+    padding: 10px;
+    margin: 10px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.book-image{
+    height: 100%;
+    width: 200px;
+    overflow: hidden;
+
+}
+
+
+.book-text-buttons {
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    justify-content: space-between;
+    height: 100%;
+    padding: 0
+}
+
+
+.book-image > img {
+    width: 100%;
+}
+
+.book-text {
+    height: 50%;
+}
+
+.book-text > h2 {
+    margin-bottom: 5px;
+    margin-top: 0;
+
+}
+
+.book-text > h4 {
+    margin: 0
+}
+
+.book-text > p {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.book-buttons > button {
+    background: #C43740;
+    border: none;
+    padding: 10px;
+    margin: 5px;
+    margin-left: 0;
+    color: white;
+    width: 150px;
+
+}

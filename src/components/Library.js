@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Book from './Book';
 import axios from 'axios';
 import './Library.css'
+import Greeting from './Greeting'
 
 class Library extends Component {
     constructor(){
@@ -153,24 +154,27 @@ class Library extends Component {
         return (
             <div>
                 <div className="library">
-                    <h1 className="header-title">Library</h1>
-                    <input type="text" placeholder="Book Title" onChange={ (e) => this.handleTitle(e.target.value)} value={title}/>
-                    <input type="text" placeholder="Author" onChange={ (e) => this.handleAuthor(e.target.value)} value={author}/>
-                    <input type="text" placeholder="Book Image Url" onChange={ (e) => this.handleImgUrl(e.target.value)} value={bookImgUrl}/>
-                    <input type="text" placeholder="Summary" onChange={ (e) => this.handleSummary(e.target.value)} value={summary}/>
-                    <input type="text" placeholder="Notes" onChange={ (e) => this.handleNotes(e.target.value)} value={notes} />
+                    <Greeting name={this.props.user} />
+                    <div className="create-search-bar">
+                        <div className="create-edit-input">
+                            <input type="text" placeholder="Book Title" onChange={ (e) => this.handleTitle(e.target.value)} value={title}/>
+                            <input type="text" placeholder="Author" onChange={ (e) => this.handleAuthor(e.target.value)} value={author}/>
+                            <input type="text" placeholder="Book Image Url" onChange={ (e) => this.handleImgUrl(e.target.value)} value={bookImgUrl}/>
+                            <input type="text" placeholder="Summary" onChange={ (e) => this.handleSummary(e.target.value)} value={summary}/>
+                            <input type="text" placeholder="Notes" onChange={ (e) => this.handleNotes(e.target.value)} value={notes} />
+                            <button onClick={() => this.createBook(title, author, bookImgUrl, summary, notes)}>Add New Book</button>
+                        </div>
+                        <div className="search-by-title">
+                            <input onChange={(e) => this.handleSearch(e.target.value)} value={this.state.userSearch}/>
+                            <button onClick={() => this.searchByTitle(this.state.userSearch)}> Searchby Title</button>
+                            <button onClick={() => this.componentDidMount()}>Reset Search Results</button>
+                        </div>
+                    </div>
                 </div>
-                <div>
-                    <button onClick={() => this.createBook(title, author, bookImgUrl, summary, notes)}>Add New Book</button>
-
-                    <input onChange={(e) => this.handleSearch(e.target.value)} value={this.state.userSearch}/>
-                    <button onClick={() => this.searchByTitle(this.state.userSearch)}> Search by Title</button>
-                </div>
-                <div>
-                    <button onClick={() => this.componentDidMount()}>Reset Search Results</button>
-                
-                </div>
+                <div className="book-display">
                 {mappedBooks}
+                </div>
+
             </div>
 
          );
