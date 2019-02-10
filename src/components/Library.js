@@ -120,6 +120,7 @@ class Library extends Component {
     }
 
     searchByTitle(){
+        console.log(this.state.userSearch)
         axios.get(`/api/searchBookByTitle?title=${this.state.userSearch}`).then( (req) => {
             if (req.data.length < 1) {
                 alert('no books found')
@@ -131,6 +132,22 @@ class Library extends Component {
         this.setState({
             userSearch: ''
         })
+    }
+
+    searchByAuthor() {
+        console.log(this.state.userSearch)
+        axios.get(`/api/searchhBookByAuthor?author=${this.state.userSearch}`).then( (req) => {
+            if (req.data.length < 1) {
+                alert('no books found')
+            } else {
+            this.setState({
+                books: req.data
+            })}
+        })
+        this.setState({
+            userSearch: ''
+        })
+
     }
 
 
@@ -158,16 +175,27 @@ class Library extends Component {
                     <div className="create-search-bar">
                         <div className="create-edit-input">
                             <input type="text" placeholder="Book Title" onChange={ (e) => this.handleTitle(e.target.value)} value={title}/>
+
                             <input type="text" placeholder="Author" onChange={ (e) => this.handleAuthor(e.target.value)} value={author}/>
+
                             <input type="text" placeholder="Book Image Url" onChange={ (e) => this.handleImgUrl(e.target.value)} value={bookImgUrl}/>
+
                             <input type="text" placeholder="Summary" onChange={ (e) => this.handleSummary(e.target.value)} value={summary}/>
+
                             <input type="text" placeholder="Notes" onChange={ (e) => this.handleNotes(e.target.value)} value={notes} />
+
                             <button onClick={() => this.createBook(title, author, bookImgUrl, summary, notes)}>Add New Book</button>
                         </div>
                         <div className="search-by-title">
-                            <input placeholder="Book Title to Search" onChange={(e) => this.handleSearch(e.target.value)} value={this.state.userSearch}/>
-                            <button onClick={() => this.searchByTitle(this.state.userSearch)}> Searchby Title</button>
+
+                            <input placeholder="Book Title or Author to Search" onChange={(e) => this.handleSearch(e.target.value)} value={this.state.userSearch}/>
+
+                            <button onClick={() => this.searchByTitle(userSearch)}> Search by Title</button>
+                            <button onClick={() => this.searchByAuthor(userSearch)}> Search by Author</button>
+
+
                             <button onClick={() => this.componentDidMount()}>Reset Search Results</button>
+
                         </div>
                     </div>
                 </div>

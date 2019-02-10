@@ -1,14 +1,14 @@
 body {
-  background: #EBD2B3;
-  padding: 100px;
+  background-image: url('./img/desk.jpg');
+  background-size: 100%;
+  background-attachment: fixed;
+
+  padding: 25px;
+  margin: 0;
 
 }
 
-.greeting{
-  display: flex;
-  justify-content: center;
-  
-}
+
 
 .landing-login{
   display: flex;
@@ -21,9 +21,10 @@ body {
 
 .landing-login > input {
   width: 200px;
-  height: 30px;
+  height: 20px;
   margin-bottom: 20px;
   border: 1px solid black;
-  padding: 5px
+  padding: 5px;
+  text-align: center;
 }
 

@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import './Fonts.css';
 import './Book.css'
 
 
@@ -44,16 +45,19 @@ class Book extends Component {
                     <div className="book-text">
                         <h2>{book.title}</h2>
                         <h4>{book.author}</h4>
-                        <p>{book.summary}</p>
-                        <p>Notes: {book.notes}</p>
+                        <div className="summary-notes">
+                            <p>{book.summary}</p>
+                            <p>Notes: {book.notes}</p>
+                        </div>
+
                     </div>
                     <div className="book-buttons">
                         {this.state.editing ? (
-                            <button onClick={ () => this.updateBook(book.id)}>Save Changes</button>
+                            <button onClick={ () => this.updateBook(book.id)}><p>save changes</p></button>
                         ) : (
-                            <button onClick={ () => this.edit()}>Update</button>
+                            <button onClick={ () => this.edit()}><p>update</p></button>
                         )}
-                        <button onClick={ () => {deleteBookFn(book.id)}}>Delete</button>
+                        <button onClick={ () => {deleteBookFn(book.id)}}><p>delete</p></button>
                     </div>
                 </div>
             </div>

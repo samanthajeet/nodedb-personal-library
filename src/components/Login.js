@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
+import './Fonts.css';
 import '../components/Login.css'
+
 
 
 class Header extends Component {
@@ -7,7 +9,7 @@ class Header extends Component {
     render() { 
         return (
         <div>
-            <button className="login-button" onClick={ () => this.props.loginFn()}>Login</button>
+            <button className="login-button" onClick={ () => this.props.loginFn()}>login</button>
         </div>
 
          );

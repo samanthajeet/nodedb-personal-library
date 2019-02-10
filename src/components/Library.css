@@ -1,33 +1,79 @@
+.greeting {
+    display:flex;
+    justify-content: center;
+}
+
+.name{
+    color:#D33333;
+    margin-right: 5px;
+    margin-left: 5px
+}
 
 .create-search-bar {
     height: 100px;
     width: 100vw;
-    background: blue;
     position: fixed;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background: white;
+    box-shadow: 5px 3px 5px 	#A9A9A9;
 }
 
 .create-edit-input {
     margin-bottom: 5px;
+    width: 85%;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .create-edit-input > input {
     width: 200px;
-    height: 20px;
-    margin-bottom: 15px;
-    border: 1px solid black;
+    height: 30px;
+    margin: 5px;
+    border: 1px solid #53B9C5;
     padding-left: 3px;
 
 }
 
+.create-edit-input > button {
+    background: black;
+    height: 30px;
+    width: 10%;
+    border: none;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    margin: 2px;
+
+}
+
+.search-by-title {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
 .search-by-title >input{
-    width: 200px;
-    height: 20px;
-    border: 1px solid black;
+    width: 20%;
+    height: 30px;
+    border: 1px solid #D33333;
     padding-left: 3px;
+    margin-top: 5px;
+    margin-right: 5px;
+}
+
+.search-by-title > button {
+    background: black;
+    height: 30px;
+    width: 10%;
+    border: none;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    margin: 2px;
 }
 
 
@@ -36,5 +82,6 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    align-items: center;
     margin-top: 150px
 }

@@ -15,8 +15,9 @@ app.use(bodyParser.json());
 app.get('/api/books', ctrl.getBooks);
 
 
-
 app.get(`/api/searchBookByTitle`, ctrl.searchBookByTitle)
+
+app.get('/api/searchhBookByAuthor', ctrl.searchBookByAuthor)
 
 
 //Post - Create
