@@ -117,6 +117,9 @@ class Library extends Component {
                 notes: ''
             })
         })
+        this.setState({
+            editing: false
+        })
     }
 
     searchByTitle(){
@@ -153,7 +156,7 @@ class Library extends Component {
 
 
     render() { 
-        const {title, author, bookImgUrl, summary, notes, userSearch} = this.state
+        const {title, author, bookImgUrl, summary, notes, userSearch, id} = this.state
         let mappedBooks = this.state.books.map( (book, index) => {
             return (
                 <div key={index}>
@@ -164,6 +167,7 @@ class Library extends Component {
                     updateBookFn={this.updateBook}
                     setEditFn={this.setEdit}
                     setTitle={this.handleTitle}
+                    editing={this.state.editing}
                 />
                 </div>
             )
@@ -185,6 +189,13 @@ class Library extends Component {
                             <input type="text" placeholder="Notes" onChange={ (e) => this.handleNotes(e.target.value)} value={notes} />
 
                             <button onClick={() => this.createBook(title, author, bookImgUrl, summary, notes)}>Add New Book</button>
+                            {this.state.editing ? (
+                                <button onClick={ () => this.updateBook(id)}><p>save changes</p></button>
+                            ) : (
+                                <p>.</p>
+                            )}
+
+
                         </div>
                         <div className="search-by-title">
 

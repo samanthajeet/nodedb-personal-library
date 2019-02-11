@@ -10,7 +10,7 @@ class Book extends Component {
         super(props);
 
         this.state = {
-            editing: false
+            
         }
         this.edit = this.edit.bind(this);
         this.updateBook = this.updateBook.bind(this)
@@ -29,7 +29,7 @@ class Book extends Component {
     updateBook(id) {
         this.props.updateBookFn(id);
         this.setState({
-            editing: false
+            editing: false 
         })
     }
 
@@ -52,7 +52,7 @@ class Book extends Component {
 
                     </div>
                     <div className="book-buttons">
-                        {this.state.editing ? (
+                        {this.props.editing ? (
                             <button onClick={ () => this.updateBook(book.id)}><p>save changes</p></button>
                         ) : (
                             <button onClick={ () => this.edit()}><p>update</p></button>
