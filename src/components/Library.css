@@ -10,7 +10,7 @@
 }
 
 .create-search-bar {
-    height: 100px;
+    height: 115px;
     width: 100vw;
     position: fixed;
     display: flex;
@@ -22,7 +22,7 @@
 }
 
 .create-edit-input {
-    margin-bottom: 5px;
+    margin: 0;
     width: 85%;
     width: 100vw;
     display: flex;
@@ -31,7 +31,7 @@
 }
 
 .create-edit-input > input {
-    width: 200px;
+    width: 13%;
     height: 30px;
     margin: 5px;
     border: 1px solid #53B9C5;
@@ -47,8 +47,10 @@
     color: white;
     font-family: 'Roboto', sans-serif;
     margin: 2px;
+    padding: 0
 
 }
+
 
 .search-by-title {
     width: 100vw;

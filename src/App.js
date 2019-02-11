@@ -11,17 +11,20 @@ class App extends Component {
 
     this.state = {
       authenticated: false,
+      isHidden: false,
       user: ''
     }
 
-    this.login = this.login.bind(this)
+    this.login = this.login.bind(this);
+    this.handleName = this.handleName.bind(this)
 
   }
 
 
   login(){
     this.setState({
-      authenticated: true
+      authenticated: true,
+      isHidden: !this.state.isHidden
     })
   }
 
@@ -34,9 +37,9 @@ class App extends Component {
   render() {
     return (
       <div className="landing-login">
-        <input onChange={ (e) => this.handleName(e.target.value) }/>
-        <Login loginFn={this.login}/>
-        {this.state.authenticated && <Library user={this.state.user} />}
+
+        <Login loginFn={this.login} isHidden={this.state.isHidden} handleName={this.handleName}/>
+        {this.state.authenticated &&  this.state.isHidden && <Library user={this.state.user} /> }
       </div>
     );
   }
