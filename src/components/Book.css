@@ -1,8 +1,8 @@
 
 
 .book-card{
-    width: 40vw;
-    height: 30vh;
+    width: 45vw;
+    height: 35vh;
     background: white;
     margin: 5px;
     padding: 10px;
@@ -44,9 +44,6 @@
     font-size: 12px;
     margin: 0;
     overflow: auto;
-
-
-
 }
 
 .book-text > h2 {
@@ -61,6 +58,7 @@
 
 .book-text > h4 {
     margin: 0;
+    margin-bottom: 2px;
     font-family: 'Montserrat', sans-serif;
     font-weight: 600;
     color: #D33333
@@ -68,9 +66,8 @@
 }
 
 .summary-notes {
-    height: 45%;
+    height: 58%;
     overflow: auto;
-    
 }
 
 .book-text > p {
