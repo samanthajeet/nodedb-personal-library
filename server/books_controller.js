@@ -32,7 +32,7 @@ const books = [
         id: 3,
     },
     {
-        title: `Harry Ptter and the Deathly Hallows`,
+        title: `Harry Pptter and the Deathly Hallows`,
         author: 'J.K. Rowling',
         bookImgUrl: 'https://images.gr-assets.com/books/1474171184l/136251.jpg',
         summary: `To stop Voldemort, Harry knows he must find the remaining Horcruxes and destroy them.
@@ -52,12 +52,28 @@ const books = [
         id: 5,
     },
     {
+        title: `To Kill a Mockingbird`,
+        author: 'Harper Lee',
+        bookImgUrl: 'https://images.gr-assets.com/books/1361975680l/2657.jpg',
+        summary: `The unforgettable novel of a childhood in a sleepy Southern town and the crisis of conscience that rocked it, To Kill A Mockingbird became both an instant bestseller and a critical success when it was first published in 1960. `,
+        notes: ``,
+        id: 6,
+    },
+    {
+        title: `The Power of Habit`,
+        author: 'Charles Duhigg ',
+        bookImgUrl: 'https://images.gr-assets.com/books/1545854312l/12609433.jpg',
+        summary: `The Power of Habit contains an exhilarating argument: The key to exercising regularly, losing weight, raising exceptional children, becoming more productive, building revolutionary companies and social movements, and achieving success is understanding how habits work. `,
+        notes: ``,
+        id: 7,
+    },
+    {
         title: `Harry Potter and the Sorcerer's Stone`,
         author: 'J.K. Rowling',
         bookImgUrl: 'https://images.gr-assets.com/books/1474154022l/3.jpg',
         summary: `Though Harry's first year at Hogwarts is the best of his life, not everything is perfect. There is a dangerous secret object hidden within the castle walls, and Harry believes it's his responsibility to prevent it from falling into evil hands. But doing so will bring him into contact with forces more terrifying than he ever could have imagined.`,
         notes: ``,
-        id: 6,
+        id: 8,
     },
 
 

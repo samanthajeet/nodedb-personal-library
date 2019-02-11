@@ -16,7 +16,8 @@ class Library extends Component {
             notes: ``,
             id: 0,
             editing: false,
-            userSearch: ''
+            userSearch: '',
+
         }
         this.deleteBook = this.deleteBook.bind(this);
         this.updateBook = this.updateBook.bind(this);
@@ -153,6 +154,9 @@ class Library extends Component {
 
     }
 
+ 
+
+
 
 
     render() { 
@@ -175,7 +179,7 @@ class Library extends Component {
         return (
             <div>
                 <div className="library">
-                    <Greeting className="greeting" name={this.props.user} />
+                    <Greeting className="greeting" name={this.props.user} randomGreeting={this.props.randomGreeting} />
                     <div className="create-search-bar">
                         <div className="create-edit-input">
                             <input type="text" placeholder="Book Title" onChange={ (e) => this.handleTitle(e.target.value)} value={title}/>

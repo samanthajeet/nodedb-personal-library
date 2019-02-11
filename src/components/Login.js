@@ -8,6 +8,12 @@ class Header extends Component {
     state = { 
 
      }
+
+    onClick(){
+        this.props.loginFn();
+        this.props.randomGreeting();
+    }
+
     render() { 
         return (
         <div className="login-area">
@@ -22,7 +28,7 @@ class Header extends Component {
                 {this.props.isHidden ? (
                     <button className="login-button" onClick={ () => this.props.loginFn()}>LOG OUT</button>
                 ) : (
-                    <button className="login-button" onClick={ () => this.props.loginFn()}>LOGIN</button>
+                    <button className="login-button" onClick={ () => this.onClick()}>LOGIN</button>
                 ) }
             </div>
 
