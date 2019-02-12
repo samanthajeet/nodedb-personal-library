@@ -14,7 +14,7 @@
 
 .book-image{
     height: 100%;
-    width: 40%;
+    width: 50%;
     overflow: hidden;
     margin: 0;
 }
@@ -78,7 +78,7 @@
 
 
 .book-buttons{
-    height: 15%;
+    height: 10%;
     display: flex;
     align-content: flex-end;
     padding: 0;
@@ -87,11 +87,10 @@
 .book-buttons > button {
     background: #FBE76C;
     border: none;
-    height:25px;
+    height: 110%;
+    width: 17%;
     color: black;
-    width: 85px;
     margin: 2px;
-    margin-bottom: 11px;
     font-family: 'Roboto', sans-serif;
     font-size:10px;
 }

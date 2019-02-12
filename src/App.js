@@ -13,7 +13,7 @@ class App extends Component {
       authenticated: false,
       isHidden: false,
       user: '',
-      greetings: ['Aloha', 'Hello', 'Bonjour', 'Hola', 'Cio', 'Guten tag','Shalom','Konnichiwa'],
+      greetings: ['Aloha', 'Hello', 'Bonjour', 'Hola', 'Cio','Shalom','Konnichiwa'],
       randomGreeting: ''
       
     }
@@ -42,7 +42,7 @@ class App extends Component {
     let randomGreeting = this.state.greetings[Math.floor(Math.random()*this.state.greetings.length)];
     this.setState({
         randomGreeting: randomGreeting
-    })
+       })
 }
 
   render() {

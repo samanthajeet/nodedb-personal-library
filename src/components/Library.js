@@ -196,7 +196,7 @@ class Library extends Component {
                             {this.state.editing ? (
                                 <button onClick={ () => this.updateBook(id)}>Save Changes</button>
                             ) : (
-                                <p>.</p>
+                                <p></p>
                             )}
 
 

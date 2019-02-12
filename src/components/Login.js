@@ -21,6 +21,21 @@ class Header extends Component {
                 {this.props.isHidden ? (
                     <p></p>
                 ) : (
+                    <div className="login-quote">
+                    <h2>“The more that you read, the more things you will know. The more that you learn, the more places you’ll go.”</h2>
+                    <h3>- Dr. Seuss -</h3>
+                    </div>
+                ) }  
+            </div>
+
+
+
+
+
+            <div >
+                {this.props.isHidden ? (
+                    <p></p>
+                ) : (
                     <input className="login-input" onChange={ (e) => this.props.handleName(e.target.value) }/>
                 ) }  
             </div>
